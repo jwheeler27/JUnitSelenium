@@ -7,7 +7,7 @@ public class TestBasicAuth {
 
     @Test
     public void testBasicAuthTitle() {
-        System.setProperty("webdriver.chrome.driver", "src/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         String baseURL = "https://the-internet.herokuapp.com/";
@@ -21,7 +21,7 @@ public class TestBasicAuth {
 
     @Test
     public void basicAuthLogin(){
-        System.setProperty("webdriver.chrome.driver", "src/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         String userPass = "admin:admin@";
 
