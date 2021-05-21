@@ -1,4 +1,4 @@
-package com.wheeler
+package com.wheeler;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Assertions;
@@ -10,8 +10,8 @@ public class TestBasicAuth {
 
     @Test
     public void testBasicAuthTitle() {
-       // System.setProperty("webdriver.chrome.driver", "src/chromedriver.exe");
-        //WebDriver driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "src/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
 
         String baseURL = "https://the-internet.herokuapp.com/";
         driver.get(baseURL);
