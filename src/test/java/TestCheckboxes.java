@@ -2,7 +2,6 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -32,6 +31,7 @@ public class TestCheckboxes {
 
     @Test
     public void TestCheckCheckBox1() {
+        driver.navigate().refresh();
         WebElement checkBox1 = driver.findElement(By.xpath("//form[@id='checkboxes']/input"));
         checkBox1.click();
         Assertions.assertTrue(checkBox1.isSelected());
@@ -39,6 +39,7 @@ public class TestCheckboxes {
 
     @Test
     public void TestUncheckCheckBox2() {
+        driver.navigate().refresh();
         WebElement checkBox2 = driver.findElement(By.xpath("//form[@id='checkboxes']/input[2]"));
         checkBox2.click();
         Assertions.assertFalse(checkBox2.isSelected());
@@ -46,6 +47,7 @@ public class TestCheckboxes {
 
     @Test
     public void TestCheckUncheckBoxes() {
+        driver.navigate().refresh();
         List<WebElement> checkBoxes = driver.findElements(By.xpath("//form[@id='checkboxes']/input"));
         WebElement checkBox1 = checkBoxes.get(0);
         WebElement checkbox2 = checkBoxes.get(1);
