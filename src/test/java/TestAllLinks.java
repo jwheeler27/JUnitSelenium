@@ -49,8 +49,8 @@ public class TestAllLinks {
             HttpClient client = HttpClientBuilder.create().build();
             HttpGet request = new HttpGet(linkElement.getAttribute("href"));
             HttpResponse response = client.execute(request);
-            // verifying response code he HttpStatus should be 200 if not,
-            // increment as invalid images count
+            // verifying response code he HttpStatus should be 200 or 401
+            // if not, set broken to true
             if (response.getStatusLine().getStatusCode() != 200 &&
                     response.getStatusLine().getStatusCode() != 401 ) {
                 broken = true;
