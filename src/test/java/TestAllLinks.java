@@ -14,6 +14,7 @@ public class TestAllLinks {
 
     private static WebDriver driver;
     private static  boolean broken = false;
+    private static List<WebElement> brokenLinks = new ArrayList<>();
 
     @BeforeAll
     public static void setUp() {
@@ -38,6 +39,13 @@ public class TestAllLinks {
             //System.out.println(i.getAttribute("href"));
         }
 
+        if(broken){
+            for (WebElement i : brokenLinks) {
+                System.out.println(i.getAttribute("href"));
+
+            }
+        }
+
         Assertions.assertFalse(broken);
 
 
@@ -54,6 +62,7 @@ public class TestAllLinks {
             if (response.getStatusLine().getStatusCode() != 200 &&
                     response.getStatusLine().getStatusCode() != 401 ) {
                 broken = true;
+                brokenLinks.add(linkElement);
 
             }
         } catch (Exception e) {
